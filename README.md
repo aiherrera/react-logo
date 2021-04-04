@@ -1,67 +1,58 @@
-# React Component Library
+# Logo Component for React
 
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+A simple & easy to use react Logo.
 
-### **Note**: This is a customized fork from [react-component-library](https://github.com/HarveyD/react-component-library) by Harvey Delaney
+## Installation
 
-This project skeleton was created to help people get started with creating their own React component library using:
+Requires **React 16 or later**
 
-- [Rollup](https://github.com/rollup/rollup)
-- [Sass](https://sass-lang.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/) to help you create and show off your components
-- [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
+`npm i --save @aiherrera/react-logo`
 
-## Development
+`# or`
 
-### Testing
+`yarn add @aiherrera/react-logo`
 
-```console
-npm run test
+## Demo
+
+You can check all the configurations in [Ai-CoderLab](https://coderlab.aiherrera.com/?path=/story/playground-react-components--logo)
+
+## Usage
+
+`{ Logo }`
+
+```
+// ES5 syntax
+const Logo = require('@aiherrera/react-logo')
+
+// ES6 syntax
+import Logo from '@aiherrera/react-logo'
+
 ```
 
-### Building
+### Full example
 
-```console
-npm run build
+```TSX
+import React from 'react'
+
+import Logo from '@aiherrera/react-logo'
+import logoSVG from './logoSVG.svg'
+
+const App = () => {
+
+  const width = 80
+  const height = 80
+
+  return <Logo logoSVG={logoSVG} width={width} height={height}/>
+
+}
 ```
 
-### Storybook
+## Props
 
-To run a live-reload Storybook server on your local machine:
+All these props are passed as defaults and can be overriden any time.
 
-```console
-npm run storybook
-```
-
-To export your Storybook as static files:
-
-```console
-npm run storybook:build
-```
-
-Generating New Components
-I've included a handy NodeJS util file under util called create-component.js. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
-
-```console
-npm run generate YourComponentName
-```
-
-This will generate:
-
-```console
-/src
-  /YourComponentName
-    YourComponentName.tsx
-    YourComponentName.stories.tsx
-    YourComponentName.test.tsx
-    YourComponentName.types.ts
-    YourComponentName.scss
-```
-
-> The default templates for each file can be modified under util/templates.
-
-> You can type the component name in lowercase mode the command will Capitilized your component on generation time.
-
-> Don't forget to add the component to your index.ts exports if you want the library to export the component!
+| Name    | Type   | Unit | Description        | Default |
+| ------- | ------ | ---- | ------------------ | ------- |
+| logoSVG | string | N/A  | Logo image dir     |         |
+| width   | number | N/A  | Width of the logo  | 64      |
+| height  | number | N/A  | Height of the logo | 64      |
